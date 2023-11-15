@@ -26,7 +26,7 @@ build-stag:
   tags:
     - build
     - test
-    
+
 build-prod:
   stage: build
   script:
@@ -36,39 +36,3 @@ build-prod:
   tags:
     - build
     - test
-
-deploy-stag:
-  stage: deploy
-  script: 
-    - >
-      DOMAIN=stag.fullstack-template.com
-      TRAEFIK_TAG=stag.fullstack-template.com
-      STACK_NAME=stag-fullstack-template-com
-      TAG=stag
-      sh ./scripts/deploy.sh
-  environment:
-    name: staging
-    url: https://stag.fullstack-template.com
-  only:
-    - master
-  tags:
-    - swarm
-    - stag
-
-deploy-prod:
-  stage: deploy
-  script:
-    - >
-      DOMAIN=fullstack-template.com
-      TRAEFIK_TAG=fullstack-template.com
-      STACK_NAME=fullstack-template-com
-      TAG=prod
-      sh ./scripts/deploy.sh
-  environment:
-    name: production
-    url: https://fullstack-template.com
-  only:
-    - production
-  tags:
-    - swarm
-    - prod
