@@ -1,5 +1,43 @@
 # fullstack-template
 
+This is intended to be a fast template to spin-up a full stack project with Python back-end and React front-end
+
+## Project Goals:
+
+### Should Have Built in
+- [ ] Docker for easy development
+- [ ] OpenAPI
+- [ ] Frontend should use TypeScript
+- [ ] Frontend should run `codegen` against the OpenAPI
+- [ ] Wiring for common stuff like auth and sending emails
+- [ ] Wiring for job queues and workers
+- [ ] support for `.env`
+- [ ] Should be able to support AI projects (LangChain has an integration with FastAPI called [LangServe](https://github.com/langchain-ai/langserve?ref=blog.langchain.dev))
+- [ ] Storybook prototyping
+- [ ] PostgreSQL DB (including vector store)
+- [ ] Alembic Migrations
+- [ ] `make`` scripts to be able to run tasks quickly
+
+## Notes on Current Implementation:
+
+Current implementation is based on project by the creator of FastAPI - [tiangolo/full-stack-fastapi-postgresql: Full stack, modern web application generator. Using FastAPI, PostgreSQL as database, Docker, automatic HTTPS and more.](https://github.com/tiangolo/full-stack-fastapi-postgresql) - might consider using python cookie cutter for my template because of this work.
+
+### Back-end
+- Python
+- FastAPI
+- stripped out a lot of the reverse proxy / load-balancer stuff in the project to make it much simpler
+
+### Front-end
+- React
+- [Building a design system with Radix - LogRocket Blog](https://blog.logrocket.com/building-design-system-radix/)
+- [A Date Range Picker component using Radix UI and Tailwind CSS](https://reactjsexample.com/a-date-range-picker-component-using-radix-ui-and-tailwind-css/)
+- [TanStack | High Quality Open-Source Software for Web Developers](https://tanstack.com/)
+- Component philosophy is to have a directory of "primitives" for components, these are basic building blocks of interaction, form inputs, cards, buttons, etc. that probably come from an existing UI kit, but they are wrapped to be able to update their implementation across the app quickly
+
+## Legacy README
+
+Everything from here down is from the project referenced above. I tried my best to cut out stuff that wasn't relevant, but I haven't really gone through it - so its just there as a guide to skim and trouble-shoot
+
 ## Backend Requirements
 
 * [Docker](https://www.docker.com/).
