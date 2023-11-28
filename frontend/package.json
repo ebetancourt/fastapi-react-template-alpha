@@ -25,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "codegen": "openapi --input ./api-spec.json --output ./generated",
+    "codegen:update": "download http://localhost:8888/api/v1/openapi.json > api-spec.json && yarn codegen"
   },
   "eslintConfig": {
     "extends": [
@@ -56,7 +58,9 @@
     "@storybook/react": "^7.6.0",
     "@storybook/react-webpack5": "^7.6.0",
     "@storybook/test": "^7.6.0",
+    "download-cli": "^1.1.1",
     "eslint-plugin-storybook": "^0.6.15",
+    "openapi-typescript-codegen": "^0.25.0",
     "prop-types": "^15.8.1",
     "storybook": "^7.6.0",
     "webpack": "^5.89.0"
