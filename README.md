@@ -5,18 +5,18 @@ This is intended to be a fast template to spin-up a full stack project with Pyth
 ## Project Goals:
 
 ### Should Have Built in
-- [ ] Docker for easy development
-- [ ] OpenAPI
-- [ ] Frontend should use TypeScript
+- [X] Docker for easy development
+- [X] OpenAPI
+- [X] Frontend should use TypeScript
 - [ ] Frontend should run `codegen` against the OpenAPI
 - [ ] Wiring for common stuff like auth and sending emails
 - [ ] Wiring for job queues and workers
 - [ ] support for `.env`
 - [ ] Should be able to support AI projects (LangChain has an integration with FastAPI called [LangServe](https://github.com/langchain-ai/langserve?ref=blog.langchain.dev))
-- [ ] Storybook prototyping
+- [X] Storybook prototyping
 - [ ] PostgreSQL DB (including vector store)
 - [ ] Alembic Migrations
-- [ ] `make`` scripts to be able to run tasks quickly
+- [ ] `make` scripts to be able to run tasks quickly
 
 ## Notes on Current Implementation:
 
