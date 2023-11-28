@@ -33,3 +33,11 @@ def test_email(
     """
     send_test_email(email_to=email_to)
     return {"msg": "Test email sent"}
+
+
+@router.get("/dummy/", response_model=schemas.Msg, status_code=200)
+def dummy_endpoint() -> Any:
+    """
+    Test dummy endpoint.
+    """
+    return {"msg": "Dummy endpoint"}
