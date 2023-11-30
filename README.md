@@ -16,8 +16,8 @@ This is intended to be a fast template to spin-up a full stack project with Pyth
 - [X] Storybook prototyping
 - [X] PostgreSQL DB
 - [ ] Enable PG vector store
-- [ ] Alembic Migrations
-- [ ] `make` scripts to be able to run tasks quickly
+- [X] Alembic Migrations
+- [X] `make` scripts to be able to run tasks quickly
 
 ## Notes on Current Implementation:
 
@@ -313,8 +313,8 @@ If you don't want to start with the default models and want to remove them / mod
 
 ```bash
 cd frontend
-npm install
-npm run serve
+yarn
+yarn dev
 ```
 
 Then open your browser at http://localhost:8080
