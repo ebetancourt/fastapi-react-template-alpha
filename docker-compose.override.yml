@@ -31,6 +31,10 @@ services:
       args:
         FRONTEND_ENV: dev
 
+  flower:
+    ports:
+      - 5555:5555
+
 networks:
   traefik-public:
     # For local dev, don't expect an external Traefik network

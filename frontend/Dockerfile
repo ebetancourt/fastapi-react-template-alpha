@@ -4,16 +4,19 @@ WORKDIR /build
 
 COPY package.json package.json
 
-COPY package-lock.json package-lock.json
+COPY yarn.lock yarn.lock
 COPY tsconfig.json tsconfig.json
+COPY api-spec.json api-spec.json
 
-RUN npm ci
+RUN corepack enable
+RUN yarn install
 
 COPY public/ public
 
 COPY src/ src
 
-RUN npm run build
+RUN yarn run codegen
+RUN yarn run build
 
 FROM nginx:alpine
 

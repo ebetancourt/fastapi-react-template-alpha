@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Theme } from '@radix-ui/themes';
 import Card from './Components/Primitives/Card';
+import { apiUrl } from './env';
 import '@radix-ui/themes/styles.css';
 import './App.css';
+import { UsersService } from '../generated';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
           <Card>
             <p>
               Edit <code>src/App.tsx</code> and save to reload.
+            </p>
+            <p>
+              The API URL is <code>{apiUrl}</code>
             </p>
           </Card>
         </header>

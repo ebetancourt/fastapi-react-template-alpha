@@ -20,8 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "react-scripts start",
+    "env:copy": "cp ../.env .env",
+    "start": "yarn env:copy && react-scripts start",
+    "dev": "yarn start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
