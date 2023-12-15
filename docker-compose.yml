@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     db:
-        image: postgres:12
+        image: ankane/pgvector
         volumes:
             - ./.docker/postgres/data:/var/lib/postgresql/data/pgdata
         env_file:

@@ -1,11 +1,11 @@
 from raven import Client
 
-from app.core.celery_app import celery_app
+from app.services.job_queue import job_queue
 from app.core.config import settings
 
 client_sentry = Client(settings.SENTRY_DSN)
 
 
-@celery_app.task(acks_late=True)
+@job_queue.task(name="job_queue.test", acks_late=True)
 def test_celery(word: str) -> str:
     return f"test task return {word}"
