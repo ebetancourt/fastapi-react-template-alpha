@@ -12,19 +12,20 @@ This is intended to be a fast template to spin-up a full stack project with Pyth
 - [X] Wiring for common stuff like auth...
 - [ ] and sending emails
 - [ ] with [MailHog](https://github.com/mailhog/MailHog) for testing email locally
+- [ ] uploading files to S3 (getting signed URLs for frontend apps)
 - [X] Wiring for job queues and workers
 - [X] support for `.env`
 - [ ] Should be able to support AI projects (LangChain has an integration with FastAPI called [LangServe](https://github.com/langchain-ai/langserve?ref=blog.langchain.dev))
 - [X] Storybook prototyping
 - [X] PostgreSQL DB
-- [ ] Enable PG vector store
+- [X] Enable PG vector store
 - [X] Alembic Migrations
 - [X] `make` scripts to be able to run tasks quickly
 - [ ] front-end for the Auth functionality (login form, password reset, registration)
 
 ## Notes on Current Implementation:
 
-Current implementation is based on project by the creator of FastAPI - [tiangolo/full-stack-fastapi-postgresql: Full stack, modern web application generator. Using FastAPI, PostgreSQL as database, Docker, automatic HTTPS and more.](https://github.com/tiangolo/full-stack-fastapi-postgresql) - might consider using python cookie cutter for my template because of this work.
+Current implementation is based on project by the creator of FastAPI - [tiangolo/full-stack-fastapi-postgresql: Full stack, modern web application generator. Using FastAPI, PostgreSQL as database, Docker, automatic HTTPS and more.](https://github.com/tiangolo/full-stack-fastapi-postgresql) - ~~might consider using python cookie cutter for my template because of this work.~~ (He's actually moving away from cookie cutter to use a git-based template!)
 
 ### Back-end
 - Python
@@ -58,7 +59,7 @@ Everything from here down is from the project referenced above. I tried my best 
 * Start the stack with Docker Compose:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 * Now you can open your browser and interact with these URLs:
@@ -78,13 +79,13 @@ PGAdmin, PostgreSQL web administration: http://localhost:5050
 To check the logs, run:
 
 ```bash
-docker-compose logs
+docker compose logs
 ```
 
 To check the logs of a specific service, add the name of the service, e.g.:
 
 ```bash
-docker-compose logs backend
+docker compose logs backend
 ```
 
 ## Backend local development, additional details
