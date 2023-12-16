@@ -1,7 +1,15 @@
 import secrets
 from typing import Any, Dict, List, Optional, Union
 
-from pydantic import AnyHttpUrl, BaseSettings, EmailStr, HttpUrl, PostgresDsn, validator
+from pydantic import (
+    AnyHttpUrl,
+    BaseSettings,
+    EmailStr,
+    HttpUrl,
+    PostgresDsn,
+    validator,
+    SettingsConfigDict,
+)
 
 
 class Settings(BaseSettings):
@@ -86,4 +94,19 @@ class Settings(BaseSettings):
         case_sensitive = True
 
 
+class S3Settings(BaseSettings):
+    REGION: str
+    ENDPOINT_URL: str
+    ACCESS_KEY: str
+    SECRET_KEY: str
+    BUCKET_NAME: str
+
+    model_config = SettingsConfigDict(env_prefix="S3_")
+
+    class Config:
+        case_sensitive = True
+
+
 settings = Settings()
+
+s3_settings = S3Settings()
